@@ -39,7 +39,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotel.Room.API", "HotelRoom.API\Hotel.Room.API.csproj", "{521D6642-62E2-4F5A-8309-AC6CDFFAA070}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelSolEmmanuel.Web", "HotelSolEmmanuel\HotelSolEmmanuel.Web.csproj", "{0A27252B-571A-4B45-B81F-122549141818}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelSolEmmanuel.Web", "HotelSolEmmanuel\HotelSolEmmanuel.Web.csproj", "{0A27252B-571A-4B45-B81F-122549141818}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IOC", "IOC", "{0CFDB83E-9CFC-4509-A386-8E8F52E5716C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelSolEmmanuel.RoomManagement.IOC", "HotelSolEmmanuel.RoomManagement.IOC\HotelSolEmmanuel.RoomManagement.IOC.csproj", "{BA669D94-BD50-4532-A0D0-9C10A3719335}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,10 @@ Global
 		{0A27252B-571A-4B45-B81F-122549141818}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A27252B-571A-4B45-B81F-122549141818}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A27252B-571A-4B45-B81F-122549141818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA669D94-BD50-4532-A0D0-9C10A3719335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA669D94-BD50-4532-A0D0-9C10A3719335}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA669D94-BD50-4532-A0D0-9C10A3719335}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA669D94-BD50-4532-A0D0-9C10A3719335}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +106,8 @@ Global
 		{8DE00765-2C6F-4E48-AC76-EECB07BC9C0E} = {9742D75F-E6A0-4295-966F-0C30BBCDD0D8}
 		{521D6642-62E2-4F5A-8309-AC6CDFFAA070} = {FF209747-FEBC-4265-B1D8-986FC4B3DF01}
 		{0A27252B-571A-4B45-B81F-122549141818} = {E34D6123-D0E8-4D13-8C2E-0CF0CBC91253}
+		{0CFDB83E-9CFC-4509-A386-8E8F52E5716C} = {9742D75F-E6A0-4295-966F-0C30BBCDD0D8}
+		{BA669D94-BD50-4532-A0D0-9C10A3719335} = {0CFDB83E-9CFC-4509-A386-8E8F52E5716C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B017EA10-E529-4D74-AEC8-DD60EC54F413}
