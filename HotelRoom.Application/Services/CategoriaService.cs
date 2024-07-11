@@ -5,7 +5,7 @@ namespace Hotel.Room.Application.Services
 {
     public class CategoriaService
     {
-        private readonly ICategoriaRepository _categoriaRepository;
+        public ICategoriaRepository _categoriaRepository;
 
         public CategoriaService(ICategoriaRepository categoriaRepository)
         {
