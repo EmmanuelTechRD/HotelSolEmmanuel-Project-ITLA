@@ -1,7 +1,7 @@
 ﻿
 namespace HotelSolEmmanuel.Categoria.Application.DTOs
 {
-    public class CategoriaDTO : CategoriaBaseModel
+    public class CategoriaDeleteModel
     {
         public int IdCategoria { get; set; }
     }
