@@ -3,6 +3,6 @@ namespace HotelSolEmmanuelCommon.Data.Base
 {
     public abstract class BaseEntity<TType>
     {
-        public required TType Id { get; set; }
+        public abstract TType Id { get; set; }
     }
 }
