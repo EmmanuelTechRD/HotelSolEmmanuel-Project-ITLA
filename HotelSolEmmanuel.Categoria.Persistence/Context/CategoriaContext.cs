@@ -12,8 +12,7 @@ namespace HotelSolEmmanuel.Categoria.Persistence.Context
         #endregion
 
         #region  "Db Sets"
-        //public DbSet<Domain.Entities.Categoria> Categoria { get; set; }
-
+        public DbSet<Domain.Entities.Categoria> Categoria { get; set; }
         #endregion
     }
 }

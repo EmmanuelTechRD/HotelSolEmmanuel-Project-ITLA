@@ -1,8 +1,16 @@
+using HotelSolEmmanuel.Categoria.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
+using HotelSolEmmanuel.Categoria.IOC.Dependencies;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddDbContext<CategoriaContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("CategoriaContext")));
+builder.Services.addCategoriaDependency();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
