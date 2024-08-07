@@ -1,20 +1,53 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using HotelSolEmmanuel.Categoria.Application.DTOs;
+using HotelSolEmmanuel.WebUI.HelpController;
+using HotelSolEmmanuel.WebUI.Links;
+using HotelSolEmmanuel.WebUI.Models.Categoria;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace HotelSolEmmanuel.WebUI.Controllers
 {
     public class CategoriaController : Controller
     {
-        // GET: CategoriaController
-        public ActionResult Index()
+        private readonly BaseHelp baseHelp;
+        private readonly ConfigUrl configUrl;
+
+        public CategoriaController(BaseHelp apiHelp, IOptions<ConfigUrl> options)
         {
-            return View();
+            baseHelp = apiHelp;
+            configUrl = options.Value;
+        }
+
+
+        // GET: CategoriaController
+        public async Task<ActionResult> Index()
+        {
+            var Response = await baseHelp.GetAsync<List<CategoriaGetModelBase>>(configUrl.GetCategoria);
+            if (Response.Success)
+            {
+                return View(Response.data);
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, Response.Message);
+                return View(new List<CategoriaGetModelBase>());
+            }
         }
 
         // GET: CategoriaController/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int id)
         {
-            return View();
+
+            var Response = await baseHelp.GetAsync<CategoriaGetModelBase>(configUrl.GetCategoriabyId(id));
+            if (Response.Success)
+            {
+                return View(Response.data);
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, Response.Message);
+                return NotFound();
+            }
         }
 
         // GET: CategoriaController/Create
@@ -26,15 +59,24 @@ namespace HotelSolEmmanuel.WebUI.Controllers
         // POST: CategoriaController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create(CategoriaSaveModel categoriaSaveModel)
         {
-            try
+
+            if (!ModelState.IsValid)
+            {
+                return View(categoriaSaveModel);
+            }
+
+            var apiResponse = await baseHelp.PostAsync(configUrl.CategoriaSave, categoriaSaveModel);
+
+            if (apiResponse.Success)
             {
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            else
             {
-                return View();
+                ModelState.AddModelError(string.Empty, apiResponse.Message);
+                return View(categoriaSaveModel);
             }
         }
 
@@ -47,15 +89,24 @@ namespace HotelSolEmmanuel.WebUI.Controllers
         // POST: CategoriaController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<ActionResult> Edit(int id, CategoriaUpdateModel categoriaUpdateModel)
         {
-            try
+
+            if (!ModelState.IsValid)
+            {
+                return View(categoriaUpdateModel);
+            }
+
+            var apiResponse = await baseHelp.PostAsync(configUrl.CategoriaUpdate(id), categoriaUpdateModel);
+
+            if (apiResponse.Success)
             {
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            else
             {
-                return View();
+                ModelState.AddModelError(string.Empty, apiResponse.Message);
+                return View(categoriaUpdateModel);
             }
         }
 

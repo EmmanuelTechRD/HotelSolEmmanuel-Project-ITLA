@@ -1,7 +1,14 @@
+using HotelSolEmmanuel.WebUI.HelpController;
+using HotelSolEmmanuel.WebUI.Links;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddHttpClient<BaseHelp>();
+
+builder.Services.Configure<ConfigUrl>(builder.Configuration.GetSection("Links"));
 
 var app = builder.Build();
 

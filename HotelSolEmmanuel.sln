@@ -63,7 +63,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelSolEmmanuel.Cliente.Pe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelSolEmmanuel.Infrastructure", "HotelSolEmmanuel.Infrastructure\HotelSolEmmanuel.Infrastructure.csproj", "{CEEF3628-3D96-4671-B8DC-547D627AFFA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelSolEmmanuel.WebUI", "HotelSolEmmanuel.WebUI\HotelSolEmmanuel.WebUI.csproj", "{0D9CE4B4-35C6-421B-9BD6-C83A6AFD4DCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelSolEmmanuel.WebUI", "HotelSolEmmanuel.WebUI\HotelSolEmmanuel.WebUI.csproj", "{0D9CE4B4-35C6-421B-9BD6-C83A6AFD4DCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

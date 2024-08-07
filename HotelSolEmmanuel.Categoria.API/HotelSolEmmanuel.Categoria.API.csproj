@@ -4,12 +4,18 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <InvariantGlobalization>true</InvariantGlobalization>
+    <InvariantGlobalization>false</InvariantGlobalization>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HotelSolEmmanuel.Categoria.Application\HotelSolEmmanuel.Categoria.Application.csproj" />
+    <ProjectReference Include="..\HotelSolEmmanuel.Categoria.IOC\HotelSolEmmanuel.Categoria.IOC.csproj" />
+    <ProjectReference Include="..\HotelSolEmmanuel.Categoria.Persistence\HotelSolEmmanuel.Categoria.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
